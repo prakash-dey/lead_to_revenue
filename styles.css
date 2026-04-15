@@ -483,5 +483,6 @@ textarea:focus {
     transform: scaleY(1);
     opacity: 1;
     pointer-events: auto;
+    background: var(--surface-high);
   }
 }
