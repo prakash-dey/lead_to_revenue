@@ -4,7 +4,11 @@ const year = document.getElementById('year');
 const form = document.querySelector('.contact-form');
 const themeToggle = document.getElementById('theme-toggle');
 const THEME_KEY = 'gritta-theme';
-const colorSchemeMql = window.matchMedia('(prefers-color-scheme: light)');
+const darkSchemeMql = window.matchMedia('(prefers-color-scheme: dark)');
+
+function logSystemTheme() {
+  console.log('System theme:', darkSchemeMql.matches ? 'dark' : 'light');
+}
 
 if (year) {
   year.textContent = String(new Date().getFullYear());
@@ -14,7 +18,7 @@ function effectiveThemeIsLight() {
   const t = document.documentElement.dataset.theme;
   if (t === 'light') return true;
   if (t === 'dark') return false;
-  return colorSchemeMql.matches;
+  return !darkSchemeMql.matches;
 }
 
 function updateThemeToggleUI() {
@@ -32,8 +36,11 @@ function updateThemeToggleUI() {
 
 function applyUserTheme(mode) {
   const next = mode === 'light' || mode === 'dark' ? mode : 'dark';
-  document.documentElement.dataset.theme = next;
-  localStorage.setItem(THEME_KEY, next);
+  const root = document.documentElement;
+  root.dataset.theme = next;
+  try {
+    sessionStorage.setItem(THEME_KEY, next);
+  } catch (e) {}
   updateThemeToggleUI();
 }
 
@@ -41,14 +48,22 @@ function onThemeToggleClick() {
   applyUserTheme(effectiveThemeIsLight() ? 'dark' : 'light');
 }
 
+function onColorSchemeMediaChange() {
+  logSystemTheme();
+  updateThemeToggleUI();
+}
+
 if (themeToggle) {
   updateThemeToggleUI();
   themeToggle.addEventListener('click', onThemeToggleClick);
-  colorSchemeMql.addEventListener('change', () => {
-    if (document.documentElement.dataset.theme === 'system') {
-      updateThemeToggleUI();
-    }
-  });
+}
+
+logSystemTheme();
+
+if (typeof darkSchemeMql.addEventListener === 'function') {
+  darkSchemeMql.addEventListener('change', onColorSchemeMediaChange);
+} else if (typeof darkSchemeMql.addListener === 'function') {
+  darkSchemeMql.addListener(onColorSchemeMediaChange);
 }
 
 function scrollToPageTop() {

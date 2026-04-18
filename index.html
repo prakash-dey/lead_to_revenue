@@ -6,13 +6,20 @@
   <script>
     (function () {
       var KEY = 'gritta-theme';
-      var t = localStorage.getItem(KEY);
-      document.documentElement.dataset.theme =
-        t === 'light' || t === 'dark' || t === 'system' ? t : 'system';
+      var root = document.documentElement;
+      var t = null;
+      try {
+        t = sessionStorage.getItem(KEY);
+      } catch (e) {}
+      if (t === 'light' || t === 'dark') {
+        root.dataset.theme = t;
+        return;
+      }
+      root.dataset.theme = 'system';
     })();
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="dark light" />
+  <meta name="color-scheme" content="light dark" />
   <title>Gritta AI — 24x7 Lead Conversion That Actually Closes</title>
   <meta name="description"
     content="Gritta AI converts your existing leads into showed-up demos and appointments with 24x7 follow-up. No lead ever goes cold." />

@@ -1,5 +1,11 @@
 /* Gritta AI — site styles */
 
+/*
+  Theme model (same idea as system theme detection reference):
+  - :root defaults to light palette (system light).
+  - @media (prefers-color-scheme: dark) applies dark palette only when data-theme="system".
+  - data-theme="dark" / "light" are user overrides from the toggle (stored in sessionStorage).
+*/
 :root {
   --radius-sm: 10px;
   --radius-md: 14px;
@@ -8,28 +14,54 @@
   --font-display: "Outfit", system-ui, sans-serif;
   --font-body: "Instrument Sans", system-ui, sans-serif;
   --header-h: 72px;
-  --bg-deep: #060607;
-  --bg: #0c0c0f;
-  --bg-raised: #121218;
-  --bg-card: #16161d;
-  --bg-card-hover: #1c1c26;
-  --border: rgba(255, 255, 255, 0.06);
-  --border-strong: rgba(255, 255, 255, 0.12);
-  --text: #f4f4f5;
-  --text-muted: #a1a1aa;
+  --bg-deep: #f0f1f6;
+  --bg: #e4e6ed;
+  --bg-raised: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f4f5fa;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.13);
+  --text: #18181b;
+  --text-muted: #52525b;
   --text-faint: #71717a;
-  --accent: #e8b84a;
-  --accent-dim: rgba(232, 184, 74, 0.14);
-  --accent-glow: rgba(232, 184, 74, 0.35);
-  --accent-2: #7dd3c0;
-  --shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.55);
-  --header-bg: rgba(6, 6, 7, 0.72);
-  --hero-frame-overlay: rgba(6, 6, 7, 0.85);
-  --page-grid-opacity: 0.5;
-  --page-grid-line: rgba(255, 255, 255, 0.02);
-  color-scheme: dark;
+  --accent: #b8922a;
+  --accent-dim: rgba(184, 146, 42, 0.18);
+  --accent-glow: rgba(184, 146, 42, 0.28);
+  --accent-2: #0d9488;
+  --shadow-lg: 0 20px 56px rgba(0, 0, 0, 0.1);
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --hero-frame-overlay: rgba(240, 241, 246, 0.92);
+  --page-grid-opacity: 0.35;
+  --page-grid-line: rgba(0, 0, 0, 0.06);
+  color-scheme: light;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="system"] {
+    --bg-deep: #060607;
+    --bg: #0c0c0f;
+    --bg-raised: #121218;
+    --bg-card: #16161d;
+    --bg-card-hover: #1c1c26;
+    --border: rgba(255, 255, 255, 0.06);
+    --border-strong: rgba(255, 255, 255, 0.12);
+    --text: #f4f4f5;
+    --text-muted: #a1a1aa;
+    --text-faint: #71717a;
+    --accent: #e8b84a;
+    --accent-dim: rgba(232, 184, 74, 0.14);
+    --accent-glow: rgba(232, 184, 74, 0.35);
+    --accent-2: #7dd3c0;
+    --shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.55);
+    --header-bg: rgba(6, 6, 7, 0.72);
+    --hero-frame-overlay: rgba(6, 6, 7, 0.85);
+    --page-grid-opacity: 0.5;
+    --page-grid-line: rgba(255, 255, 255, 0.02);
+    color-scheme: dark;
+  }
+}
+
+/* User chose light in the toggle (including while system is dark) */
 :root[data-theme="light"] {
   --bg-deep: #f0f1f6;
   --bg: #e4e6ed;
@@ -53,31 +85,7 @@
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: light) {
-  :root[data-theme="system"] {
-    --bg-deep: #f0f1f6;
-    --bg: #e4e6ed;
-    --bg-raised: #ffffff;
-    --bg-card: #ffffff;
-    --bg-card-hover: #f4f5fa;
-    --border: rgba(0, 0, 0, 0.08);
-    --border-strong: rgba(0, 0, 0, 0.13);
-    --text: #18181b;
-    --text-muted: #52525b;
-    --text-faint: #71717a;
-    --accent: #b8922a;
-    --accent-dim: rgba(184, 146, 42, 0.18);
-    --accent-glow: rgba(184, 146, 42, 0.28);
-    --accent-2: #0d9488;
-    --shadow-lg: 0 20px 56px rgba(0, 0, 0, 0.1);
-    --header-bg: rgba(255, 255, 255, 0.9);
-    --hero-frame-overlay: rgba(240, 241, 246, 0.92);
-    --page-grid-opacity: 0.35;
-    --page-grid-line: rgba(0, 0, 0, 0.06);
-    color-scheme: light;
-  }
-}
-
+/* User chose dark in the toggle (including while system is light) */
 :root[data-theme="dark"] {
   --bg-deep: #060607;
   --bg: #0c0c0f;
@@ -99,10 +107,6 @@
   --page-grid-opacity: 0.5;
   --page-grid-line: rgba(255, 255, 255, 0.02);
   color-scheme: dark;
-}
-
-:root[data-theme="system"] {
-  color-scheme: dark light;
 }
 
 *,
