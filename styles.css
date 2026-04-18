@@ -451,14 +451,27 @@ p {
   }
 }
 
-.hero h1 {
+.hero h1,
+.hero-heading {
   font-family: var(--font-display);
   font-size: clamp(2.35rem, 5.5vw, 3.75rem);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.08;
   letter-spacing: -0.035em;
-  max-width: min(100%, 22rem);
   margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12em;
+}
+
+.hero-heading-line {
+  display: block;
+  max-width: 100%;
+}
+
+.hero-heading-line:first-child {
+  text-wrap: balance;
 }
 
 .hero-title-accent {
