@@ -3,29 +3,38 @@
 
 <head>
   <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var KEY = 'gritta-theme';
+      var t = localStorage.getItem(KEY);
+      document.documentElement.dataset.theme =
+        t === 'light' || t === 'dark' || t === 'system' ? t : 'system';
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gritta AI | Sales Outsourcing for Inbound, Outbound & Closers</title>
+  <meta name="color-scheme" content="dark light" />
+  <title>Gritta AI — 24x7 Lead Conversion That Actually Closes</title>
   <meta name="description"
-    content="Gritta AI helps companies outsource inbound calling, outbound prospecting, and closing support with a high-performance sales collective that drives qualified pipeline and revenue growth." />
+    content="Gritta AI converts your existing leads into showed-up demos and appointments with 24x7 follow-up. No lead ever goes cold." />
   <meta name="keywords"
-    content="sales outsourcing, inbound calling, outbound calling, appointment setting, SDR outsourcing, remote closers, lead generation, B2B sales support" />
+    content="lead conversion, 24x7 sales follow-up, appointment setting, pay per show, outsourced SDR, B2B sales" />
   <meta name="robots" content="index,follow" />
   <meta name="author" content="Gritta AI" />
   <link rel="canonical" href="https://leadtorevenue.com/" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gritta AI | Sales Outsourcing That Closes" />
+  <meta property="og:title" content="Gritta AI — 24x7 Lead Conversion" />
   <meta property="og:description"
-    content="Scale your revenue engine with outsourced inbound and outbound calling teams plus expert closing support." />
+    content="Done-for-you lead conversion powered by 24x7 follow-up. Pay only when they show up." />
   <meta property="og:url" content="https://leadtorevenue.com/" />
   <meta property="og:site_name" content="Gritta AI" />
   <meta property="og:image"
     content="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Gritta AI | Sales Outsourcing That Closes" />
+  <meta name="twitter:title" content="Gritta AI — 24x7 Lead Conversion" />
   <meta name="twitter:description"
-    content="Outsource inbound and outbound calling with a team focused on meetings, pipeline and closed revenue." />
+    content="Done-for-you lead conversion powered by 24x7 follow-up. Pay only when they show up." />
   <meta name="twitter:image"
     content="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80" />
 
@@ -36,7 +45,7 @@
     href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 
   <script type="application/ld+json">
       {
@@ -45,7 +54,7 @@
         "name": "Gritta AI",
         "url": "https://leadtorevenue.com",
         "logo": "https://leadtorevenue.com/logo.png",
-        "description": "Sales outsourcing company for inbound calling, outbound prospecting and closing support.",
+        "description": "24x7 lead conversion: follow-up, qualification, and appointment setting until prospects show up ready to buy.",
         "email": "hello@ltr.com",
         "sameAs": []
       }
@@ -54,13 +63,13 @@
       {
         "@context": "https://schema.org",
         "@type": "Service",
-        "serviceType": "Sales Outsourcing",
+        "serviceType": "Lead conversion and appointment setting",
         "provider": {
           "@type": "Organization",
           "name": "Gritta AI"
         },
         "areaServed": "Global",
-        "description": "Outsourced inbound calling, outbound lead generation, appointment setting and closing support for growing companies."
+        "description": "24x7 lead follow-up, multi-channel outreach, qualification, call handling, and pay-per-show appointment setting."
       }
     </script>
 </head>
@@ -68,78 +77,134 @@
 <body>
   <div class="page-bg" aria-hidden="true"></div>
 
-  <header class="site-header" id="home">
+  <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#home" aria-label="Gritta AI home">
         <span class="brand-mark" aria-hidden="true"></span>
         <span class="brand-text">Gritta AI</span>
       </a>
-      <button class="menu-btn" type="button" aria-label="Open navigation" aria-expanded="false">
-        <span class="menu-btn-lines" aria-hidden="true"></span>
-        Menu
-      </button>
-      <nav class="main-nav" aria-label="Primary">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#testimonials">Proof</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact" class="nav-cta">Book a call</a>
-      </nav>
+      <div class="header-end">
+        <button type="button" class="theme-toggle" id="theme-toggle" data-appearance="dark"
+          aria-label="Switch to light mode" title="Light mode">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              d="M12 3v1m0 16v1m8.66-9h-1M4.34 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M21 14.5A8.5 8.5 0 019.5 3a8.5 8.5 0 1011.5 11.5z" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <button class="menu-btn" type="button" aria-label="Open navigation" aria-expanded="false">
+          <span class="menu-btn-lines" aria-hidden="true"></span>
+          Menu
+        </button>
+        <nav class="main-nav" aria-label="Primary">
+          <a href="#home">Home</a>
+          <a href="#problem">Problem</a>
+          <a href="#services">What we do</a>
+          <a href="#how-it-works">Process</a>
+          <a href="#speed">Speed</a>
+          <a href="#testimonials">Proof</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact" class="nav-cta">Book a call</a>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero section" aria-labelledby="hero-heading">
+    <section class="hero section" id="home" aria-labelledby="hero-heading">
       <div class="container hero-layout">
         <div class="hero-main">
-          <p class="eyebrow">
+          <p class="eyebrow eyebrow--pill">
             <span class="eyebrow-dot" aria-hidden="true"></span>
-            <span class="eyebrow-type-wrap" aria-hidden="true">
-              <span class="eyebrow-type-text">Sales execution, outsourced</span>
-              <span class="eyebrow-caret eyebrow-caret--typing"
-                aria-hidden="true"></span>
-            </span>
+            24x7 Lead Conversion — Always On
           </p>
-          <h1 id="hero-heading">Pipeline that moves. Teams that close.</h1>
+          <h1 id="hero-heading">Your Leads Come In 24x7.<br /><span class="hero-title-accent">So Do We.</span></h1>
           <p class="hero-lede">
-            Gritta AI is your outsourced sales collective for inbound calling, outbound calling, and closing
-            support. We build disciplined revenue systems so your leaders can focus on strategy—not staffing chaos.
+            Most companies lose deals not because of bad leads — but because no one follows up fast enough or
+            consistently enough. Gritta AI handles every step between a lead coming in and a client showing up
+            ready to buy — day and night, without missing a single one.
           </p>
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Book strategy call</a>
-            <a href="#services" class="btn btn-ghost">Explore services</a>
+            <a href="#contact" class="btn btn-primary">Book a free strategy call</a>
+            <a href="#how-it-works" class="btn btn-ghost">See how it works</a>
           </div>
-          <ul class="hero-metrics" aria-label="Highlights">
+          <ul class="hero-metrics hero-metrics--statbar" aria-label="Key outcomes">
             <li>
-              <span class="metric-value">Full-funnel</span>
-              <span class="metric-label">Inbound + outbound + closes</span>
+              <span class="metric-value">24/7</span>
+              <span class="metric-label">Follow-up coverage</span>
             </li>
             <li>
-              <span class="metric-value">Weekly QA</span>
-              <span class="metric-label">Scripts tuned on live calls</span>
+              <span class="metric-value">87%</span>
+              <span class="metric-label">Show-up rate</span>
             </li>
             <li>
-              <span class="metric-value">Fast launch</span>
-              <span class="metric-label">Discovery → live reps</span>
+              <span class="metric-value">3x</span>
+              <span class="metric-label">More closed deals</span>
             </li>
           </ul>
         </div>
         <div class="hero-visual">
-          <figure class="hero-frame">
+          <figure class="hero-frame hero-frame--tilt">
             <img class="hero-image"
               src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80"
               alt="Revenue and sales team collaborating around a wall of plans and sticky notes in a modern office"
               loading="eager" width="640" height="420" />
           </figure>
-          <aside class="hero-panel" aria-label="What you get">
+          <aside class="hero-panel hero-panel--accent-edge" aria-label="What you get">
             <h2 class="hero-panel-title">What you get</h2>
             <ul class="checklist">
-              <li>Dedicated inbound and outbound callers</li>
-              <li>Conversion-first scripting and QA</li>
-              <li>Optimization cadence with weekly reviews</li>
+              <li>Instant 24x7 follow-up on every inbound lead</li>
+              <li>Multi-channel outreach until they book and show</li>
+              <li>Optional pay-per-show pricing — no show, no charge</li>
             </ul>
           </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem-band" id="problem">
+      <div class="container">
+        <header class="section-head section-head--wide">
+          <p class="kicker">The problem</p>
+          <h2>The gap between lead and revenue <span class="head-muted">is costing you</span></h2>
+        </header>
+        <div class="problem-grid">
+          <article class="problem-card">
+            <span class="problem-card-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
+                <path d="M12 7v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3>Leads go cold in minutes</h3>
+            <p>Leads go cold in the first hour — and no one is following up fast enough.</p>
+          </article>
+          <article class="problem-card">
+            <span class="problem-card-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
+                <path d="M8 8l8 8M16 8l-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3>Unqualified calls waste time</h3>
+            <p>Unqualified prospects waste your closers' time on calls that were never going to close.</p>
+          </article>
+          <article class="problem-card">
+            <span class="problem-card-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 1l4 4-10 10H7v-4L17 1z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                <path d="M14 4l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3>Sales teams stuck in presales</h3>
+            <p>Your sales team is stuck doing presales work instead of actually selling.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -147,174 +212,195 @@
     <section class="section services" id="services">
       <div class="container">
         <header class="section-head">
-          <p class="kicker">Services</p>
-          <h2>Outsourced sales built for fixing <span class="section-head-accent">INCONSISTENT CLOSING </span>.</h2>
+          <p class="kicker">What we do</p>
+          <h2>We handle everything before the close — <span class="section-head-accent">24x7</span></h2>
           <p class="section-intro">
-            One partner for the full revenue motion: qualify intent, book meetings, support late-stage deals,
-            and keep the CRM honest.
+            One system that moves leads from first touch to showed-up calendar — without your team living in the
+            inbox.
           </p>
         </header>
 
-        <div class="service-bento">
-          <article class="service-card service-card--feature">
-            <div class="service-card-top">
+        <div class="offer-bento">
+          <article class="offer-card offer-card--feature">
+            <div class="offer-card-top">
               <span class="service-icon" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 6h16M4 12h10M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
-              <h3>Inbound calling &amp; lead qualification</h3>
+              <h3>24x7 lead follow-up</h3>
             </div>
             <img class="service-card-image"
               src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=1000&q=80"
-              alt="Smiling support professional wearing a headset while handling inbound calls at a computer"
-              loading="lazy" width="800" height="480" />
-            <p>
-              Never lose ready-to-buy leads. Our inbound reps answer quickly, qualify accurately, and push
-              opportunities to your sales team with clear next steps.
-            </p>
-            <ul class="bullets">
-              <li>24/7 inbound response workflows</li>
-              <li>Lead scoring and qualification scripts</li>
-              <li>Call QA and conversion optimization</li>
-            </ul>
+              alt="Professional wearing a headset while responding to leads at a computer" loading="lazy" width="800"
+              height="480" />
+            <p>Every lead gets contacted immediately, any time of day or night. No lead ever goes cold.</p>
           </article>
 
-          <article class="service-card">
+          <article class="offer-card">
             <span class="service-icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" />
+                <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
               </svg>
             </span>
-            <h3>Outbound prospecting</h3>
-            <img class="service-card-image service-card-image--sm"
-              src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80"
-              alt="Sales team working together at laptops in an open office during outbound prospecting" loading="lazy"
-              width="640" height="360" />
-            <p>Elite SDR pods run targeted outbound sequences that book meetings with decision-makers.</p>
+            <h3>Outreach</h3>
+            <p>We reach out across every channel — DMs, email, and calls — so no lead slips through.</p>
           </article>
 
-          <article class="service-card">
+          <article class="offer-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 12l2 2 4-4M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <h3>Qualification</h3>
+            <p>We filter out time-wasters so only serious, ready-to-buy prospects get through.</p>
+          </article>
+
+          <article class="offer-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <h3>Call handling</h3>
+            <p>We manage all presales calls and warm every prospect up before they reach your team.</p>
+          </article>
+
+          <article class="offer-card">
             <span class="service-icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2" />
-                <path d="M3 10h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
               </svg>
             </span>
             <h3>Appointment setting</h3>
-            <p>Structured outreach, objection handling, and calendar coordination to keep your pipeline full.</p>
-          </article>
-
-          <article class="service-card">
-            <span class="service-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z" stroke="currentColor" stroke-width="2"
-                  stroke-linejoin="round" />
-              </svg>
-            </span>
-            <h3>Closing support</h3>
-            <p>Experienced closers help your team improve proposal-to-win rates and reduce sales-cycle drag.</p>
-          </article>
-
-          <article class="service-card">
-            <span class="service-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 19V5M4 19h16M8 17V9M12 17V7M16 17v-5" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" />
-              </svg>
-            </span>
-            <h3>CRM &amp; sales operations</h3>
-            <p>Pipeline hygiene, reporting dashboards, and call intelligence so every action ties to revenue.</p>
+            <p>We book showed-up, ready-to-convert demos straight onto your calendar.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section about" id="about">
-      <div class="container about-grid">
-        <div class="about-copy">
-          <header class="section-head">
-            <p class="kicker">About us</p>
-            <h2>The outsourcing partner behind teams that cannot afford <span class="section-head-accent">SLOW HIRING</span>.</h2>
-            <p class="section-intro">
-              We created Gritta AI for companies that need predictable sales execution without long hiring cycles.
-              We recruit, train, and manage a dedicated team aligned to your market, message, and revenue goals.
-            </p>
-          </header>
-          <ul class="about-list">
-            <li>
-              <span class="about-list-num">01</span>
-              <span>Dedicated inbound and outbound specialists for your account</span>
+    <section class="section process-section" id="how-it-works">
+      <div class="container">
+        <header class="section-head">
+          <p class="kicker">How it works</p>
+          <h2>Three steps to more revenue</h2>
+        </header>
+        <div class="process-timeline">
+          <ol class="process-track">
+            <li class="process-step">
+              <span class="process-step-marker" aria-hidden="true"></span>
+              <div class="process-step-body">
+                <span class="process-step-num" aria-hidden="true">01</span>
+                <h3>Send us your leads</h3>
+                <p>Connect your CRM or forward leads — we integrate with everything.</p>
+              </div>
             </li>
-            <li>
-              <span class="about-list-num">02</span>
-              <span>Weekly script refinements from live call intelligence</span>
+            <li class="process-step">
+              <span class="process-step-marker" aria-hidden="true"></span>
+              <div class="process-step-body">
+                <span class="process-step-num" aria-hidden="true">02</span>
+                <h3>Gritta AI works them 24x7</h3>
+                <p>Outreach, qualify, call, follow up, repeat. Around the clock.</p>
+              </div>
             </li>
-            <li>
-              <span class="about-list-num">03</span>
-              <span>Transparent KPI reviews with revenue attribution</span>
+            <li class="process-step">
+              <span class="process-step-marker" aria-hidden="true"></span>
+              <div class="process-step-body">
+                <span class="process-step-num" aria-hidden="true">03</span>
+                <h3>You close the deals</h3>
+                <p>You receive showed-up appointments ready to close. Nothing else.</p>
+              </div>
             </li>
-            <li>
-              <span class="about-list-num">04</span>
-              <span>Fast onboarding with a proven deployment architecture</span>
-            </li>
-          </ul>
+          </ol>
         </div>
-        <div class="about-visual">
-          <div class="about-frame">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80"
-              alt="Facilitator leading a strategic workshop with a diverse business team around a conference table"
-              loading="lazy" width="640" height="720" />
-          </div>
+      </div>
+    </section>
+
+    <section class="section spotlight-section" id="speed" aria-labelledby="spotlight-heading">
+      <div class="container">
+        <header class="section-head section-head--center">
+          <p class="kicker">Why 24x7 matters</p>
+          <h2 id="spotlight-heading">Speed is everything in sales</h2>
+        </header>
+        <div class="spotlight-card">
+          <p class="spotlight-stat" aria-label="78 percent">78%</p>
+          <p class="spotlight-copy">
+            of deals go to the vendor who responds first. Gritta AI makes sure that's always you — no matter when
+            a lead comes in, what timezone they're in, or what time it is. We follow up until they're ready.
+          </p>
         </div>
       </div>
     </section>
 
     <section class="section testimonials" id="testimonials">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head section-head--center">
           <p class="kicker">Testimonials</p>
-          <h2>Trusted by teams that need growth now—not next quarter.</h2>
+          <h2>Trusted by sales teams everywhere</h2>
         </header>
         <div class="testimonial-grid">
-          <blockquote class="quote-card">
-            <span class="quote-mark" aria-hidden="true">“</span>
+          <blockquote class="quote-card quote-card--lift">
+            <div class="quote-stars" aria-label="5 out of 5 stars">
+              <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            </div>
             <p>
-              Gritta AI quickly improved our qualified meetings and made our close-rate consistency much
-              stronger across outbound.
-            </p>
-            <footer>
-              <img class="avatar"
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=128&h=128&q=80"
-                alt="Portrait of a professional man in business attire" width="48" height="48" loading="lazy" />
-              <cite>VP Sales, B2B SaaS</cite>
-            </footer>
-          </blockquote>
-          <blockquote class="quote-card">
-            <span class="quote-mark" aria-hidden="true">“</span>
-            <p>
-              We outsourced inbound and instantly stopped missing high-intent calls. Their team works like an
-              extension of ours.
+              Gritta AI completely transformed our sales pipeline. We went from losing 60% of leads to booking 3x
+              more demos — all without hiring a single new rep.
             </p>
             <footer>
               <img class="avatar"
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=128&h=128&q=80"
-                alt="Portrait of a professional woman smiling in office attire" width="48" height="48" loading="lazy" />
-              <cite>Founder, EdTech Startup</cite>
+                alt="" width="48" height="48" loading="lazy" />
+              <cite><span class="cite-name">Sarah Mitchell</span><span class="cite-role">VP of Sales, CloudScale</span></cite>
             </footer>
           </blockquote>
-          <blockquote class="quote-card">
-            <span class="quote-mark" aria-hidden="true">“</span>
+          <blockquote class="quote-card quote-card--lift">
+            <div class="quote-stars" aria-label="5 out of 5 stars">
+              <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            </div>
             <p>
-              From appointment setting to late-stage objection handling, they’ve helped us build a real revenue
-              machine.
+              We used to let leads sit for hours. Now every single one gets contacted within minutes, 24/7. Our
+              show-up rate jumped to 87% in the first month.
+            </p>
+            <footer>
+              <img class="avatar"
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=128&h=128&q=80"
+                alt="" width="48" height="48" loading="lazy" />
+              <cite><span class="cite-name">James Rodriguez</span><span class="cite-role">CEO, RevOps Pro</span></cite>
+            </footer>
+          </blockquote>
+          <blockquote class="quote-card quote-card--lift">
+            <div class="quote-stars" aria-label="5 out of 5 stars">
+              <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            </div>
+            <p>
+              The pay-per-show model was a no-brainer. Zero risk, and we tripled our closed deals in Q1. I wish we'd
+              started sooner.
             </p>
             <footer>
               <img class="avatar"
                 src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=128&h=128&q=80"
-                alt="Portrait of a professional man in a blazer" width="48" height="48" loading="lazy" />
-              <cite>Revenue Director, FinTech Scale-up</cite>
+                alt="" width="48" height="48" loading="lazy" />
+              <cite><span class="cite-name">Emily Chen</span><span class="cite-role">Head of Growth, Nextera</span></cite>
             </footer>
           </blockquote>
         </div>
@@ -323,23 +409,51 @@
 
     <section class="section faq" id="faq">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head section-head--center">
           <p class="kicker">FAQ</p>
-          <h2>Common questions about our outsourcing model.</h2>
+          <h2>Frequently asked questions</h2>
         </header>
-        <div class="faq-list">
+        <div class="faq-list faq-list--wide">
           <details class="faq-item">
-            <summary>How fast can we launch?</summary>
-            <p>Most teams go live quickly after discovery, scripting, and CRM alignment.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Do you handle both inbound and outbound?</summary>
-            <p>Yes. We can run dedicated teams for inbound, outbound, or a combined full-funnel program.</p>
-          </details>
-          <details class="faq-item">
-            <summary>How do you report performance?</summary>
+            <summary>How does the pay-per-show model work?</summary>
             <p>
-              We provide weekly scorecards covering calls, meetings booked, pipeline value, and close outcomes.
+              You only pay when an appointment actually shows up on your calendar. If a prospect no-shows, you don't
+              get charged. No retainers, no setup fees, no hidden costs.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>What kind of leads can you work with?</summary>
+            <p>
+              Inbound form fills, demo requests, trial signups, event lists, and qualified outbound replies — we align
+              scripts and qualification to your ICP and sales motion.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>How quickly do you follow up with new leads?</summary>
+            <p>
+              Leads are worked immediately on a 24x7 rotation. The goal is first touch in minutes, not hours, so speed
+              stays on your side.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you replace my sales team?</summary>
+            <p>
+              No. We own the pre-close conversion path — follow-up, qualification, and booking. Your team focuses on
+              live conversations with prospects who actually show up.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>What channels do you use for outreach?</summary>
+            <p>
+              Calls, email, and social DMs as appropriate for your offer and compliance rules — coordinated so no
+              lead falls through the cracks.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I get started?</summary>
+            <p>
+              Book a strategy call. We map your funnel, connect your CRM or lead flow, and launch the follow-up
+              system with clear show-up reporting.
             </p>
           </details>
         </div>
@@ -350,11 +464,12 @@
       <div class="container contact-grid">
         <div class="contact-intro">
           <header class="section-head">
-            <p class="kicker">Contact</p>
-            <h2>Ready to build your revenue machine?</h2>
+            <p class="kicker">Get started</p>
+            <h2>Stop letting leads go cold.<br /><span class="section-head-accent">Let Gritta AI convert them.</span>
+            </h2>
             <p class="section-intro">
-              Share your current lead volume and target growth goals. We will map an outbound and inbound calling
-              strategy around your ideal customer profile.
+              Your competitors are following up right now. Are you? Tell us about your lead volume and we’ll map a
+              24x7 conversion plan to your calendar.
             </p>
           </header>
           <a class="contact-email" href="mailto:hello@ltr.com">hello@ltr.com</a>
@@ -378,16 +493,16 @@
             Service needed
             <select name="service" required>
               <option value="">Select one</option>
-              <option>Inbound Calling</option>
-              <option>Outbound Prospecting</option>
-              <option>Appointment Setting</option>
-              <option>Closing Support</option>
-              <option>Let's discuss on call</option>
+              <option>24x7 lead follow-up</option>
+              <option>Pay-per-show appointments</option>
+              <option>Outbound + qualification</option>
+              <option>Full conversion program</option>
+              <option>Let's discuss on a call</option>
             </select>
           </label>
           <label>
             Message
-            <textarea name="message" rows="4" placeholder="Tell us your sales bottleneck..." required></textarea>
+            <textarea name="message" rows="4" placeholder="Tell us your lead volume and biggest drop-off..." required></textarea>
           </label>
           <button type="submit" class="btn btn-primary btn-full">Send message</button>
         </form>
@@ -402,12 +517,14 @@
           <span class="brand-mark" aria-hidden="true"></span>
           <span class="brand-text">Gritta AI</span>
         </a>
-        <p class="footer-tagline">Outsourced inbound, outbound, and closing—run like an internal team.</p>
+        <p class="footer-tagline">24x7 lead conversion — from first touch to showed-up revenue.</p>
       </div>
       <nav class="footer-nav" aria-label="Footer">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#testimonials">Testimonials</a>
+        <a href="#problem">Problem</a>
+        <a href="#services">What we do</a>
+        <a href="#how-it-works">Process</a>
+        <a href="#speed">Speed</a>
+        <a href="#testimonials">Proof</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -418,7 +535,7 @@
     </div>
   </footer>
 
-  <script src="/script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
