@@ -1,4 +1,7 @@
 - Add both dark mode and light mode to the website /done
-- Add the correct email
+- Add the correct email/done
 - Optional pay to be removed/done
 - Change the name of the testimonials persons
+- Add a logo in title/done
+- Limit the response to 1 when you see spamming
+- Make github repo private and create two branches
