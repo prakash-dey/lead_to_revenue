@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Gritta AI">
+  <defs>
+    <linearGradient id="a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b8922a" />
+      <stop offset="100%" stop-color="#f5d48a" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="10" fill="url(#a)" />
+</svg>

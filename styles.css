@@ -963,12 +963,17 @@ a.btn {
 }
 
 .offer-bento > .offer-card:nth-child(4) {
-  grid-column: 1 / span 3;
+  grid-column: 1 / span 2;
   grid-row: 3;
 }
 
 .offer-bento > .offer-card:nth-child(5) {
-  grid-column: 4 / span 3;
+  grid-column: 3 / span 2;
+  grid-row: 3;
+}
+
+.offer-bento > .offer-card:nth-child(6) {
+  grid-column: 5 / span 2;
   grid-row: 3;
 }
 
@@ -1534,7 +1539,8 @@ textarea {
   .offer-bento > .offer-card:nth-child(2),
   .offer-bento > .offer-card:nth-child(3),
   .offer-bento > .offer-card:nth-child(4),
-  .offer-bento > .offer-card:nth-child(5) {
+  .offer-bento > .offer-card:nth-child(5),
+  .offer-bento > .offer-card:nth-child(6) {
     grid-column: auto;
     grid-row: auto;
   }

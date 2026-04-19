@@ -1,0 +1,4 @@
+- Add both dark mode and light mode to the website /done
+- Add the correct email
+- Optional pay to be removed/done
+- Change the name of the testimonials persons
